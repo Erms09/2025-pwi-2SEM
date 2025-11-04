@@ -1,11 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Spotify</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #191414;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+
+        .logo {
+            color: #1DB954;
+            font-size: 45px;
+            font-family: Arial, Helvetica, sans-serif;
+            position: absolute;
+            left: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60px;
+            gap: 50px;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .pesquisa form {
+            position: absolute;
+            right: 20px;
+            top: 7px;
+        }
+
+        .pesquisa label {
+            color: white;
+        }
+
+        .pesquisa input {
+            padding: 15px;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            background-color: #282828;
+            color: white;
+            width: 200px;
+            font-size: 15px;
+        }
+
+        .janelaConta {
+            padding: 20px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 10px;
+            background-color: #282828;
+        }
+
+        .janelaConta h2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            color: #1DB954;
+        }
+
+        .janelaConta form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .janelaConta label {
+            color: white;
+            font-weight: bold;
+        }
+
+        .janelaConta input {
+            color: #191414;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+        }
+
+        .janelaConta button {
+            background-color: #1DB954;
+            color: white;
+            border-radius: 10px;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div class="sidebar">
+        <ul>
+            <div class="logo"><b>Spotify</b></div>
+            <li><a href="">Inicio</a></li>
+            <li><a href="">Sua Biblioteca</a></li>
+            <li><a href="" id="btnConta">Conta</a></li>
+        </ul>
+    </div>
+
+    <div class="janelaConta">
+        <h2>Criar Conta</h2>
+        <form>
+            <label for="nomeUsuario">Nome do Úsuario</label>
+            <input type="text" id="nomeUsuario" name="Nome do Úsuario">
+            <label for="criarSenha">Criar Senha</label>
+            <input type="text" id="criarSenha" name="Criar Senha">
+            <button>Salvar</button>
+        </form>
+    </div>
+
+    <div class="pesquisa">
+        <form>
+            <input type="text" id="pesquisa" name="Buscar" placeholder="O que você quer ouvir?">
+        </form>
+    </div>
 </body>
+
 </html>
