@@ -23,7 +23,7 @@
             left: 20px;
         }
 
-        .sidebar ul {
+        .barraNavegacao ul {
             list-style: none;
             padding: 0;
             margin: 0;
@@ -35,23 +35,24 @@
             gap: 50px;
         }
 
-        .sidebar ul li a {
+        .barraNavegacao a:hover {
+            color: #1DB954;
+            cursor: pointer;
+        }
+
+        .barraNavegacao ul li a {
             color: white;
             text-decoration: none;
             font-weight: bold;
         }
 
-        .pesquisa form {
+        .barraPesquisa form {
             position: absolute;
             right: 20px;
             top: 7px;
         }
 
-        .pesquisa label {
-            color: white;
-        }
-
-        .pesquisa input {
+        .barraPesquisa input {
             padding: 15px;
             border-radius: 20px;
             border: none;
@@ -62,79 +63,94 @@
             font-size: 15px;
         }
 
-        .janelaConta {
-            padding: 20px;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 10px;
-            background-color: #282828;
+        .artista {
+            color: white;
+            font-size: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
         }
 
-        .janelaConta h2 {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
+        .artista img {
+            padding: 15px;
+            height: 200px;
+            width: 200px;
+            border-radius: 100%;
+            object-fit: cover;
+        }
+
+        .musica {
+            padding-left: 20px;
+            font-size: 20px;
+            margin: 0;
+        }
+
+        .musica li {
+            color: white;
+            padding: 5px;
+        }
+
+        .musica li:hover {
+            margin: 10px;
             color: #1DB954;
-        }
-
-        .janelaConta form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .janelaConta label {
-            color: white;
-            font-weight: bold;
-        }
-
-        .janelaConta input {
-            color: #191414;
-            border: none;
-            outline: none;
-            border-radius: 5px;
-        }
-
-        .janelaConta button {
-            background-color: #1DB954;
-            color: white;
-            border-radius: 10px;
-            border: none;
-            font-size: 18px;
-            font-weight: bold;
+            transition: 0.5s;
+            cursor: pointer;
         }
     </style>
 </head>
 
 <body>
-    <div class="sidebar">
-        <ul>
+    <nav class="barraNavegacao">
+        <div class="barraNavegacao">
             <div class="logo"><b>Spotify</b></div>
-            <li><a href="">Inicio</a></li>
-            <li><a href="">Sua Biblioteca</a></li>
-            <li><a href="" id="btnConta">Conta</a></li>
-        </ul>
-    </div>
+            <ul>
+                <li><a href="">Inicio</a></li>
+                <li><a href="">Sua Biblioteca</a></li>
+                <li><a href="" id="btnConta">Conta</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <div class="janelaConta">
-        <h2>Criar Conta</h2>
-        <form>
-            <label for="nomeUsuario">Nome do Úsuario</label>
-            <input type="text" id="nomeUsuario" name="Nome do Úsuario">
-            <label for="criarSenha">Criar Senha</label>
-            <input type="text" id="criarSenha" name="Criar Senha">
-            <button>Salvar</button>
-        </form>
-    </div>
-
-    <div class="pesquisa">
+    <div class="barraPesquisa">
         <form>
             <input type="text" id="pesquisa" name="Buscar" placeholder="O que você quer ouvir?">
         </form>
+    </div>
+
+    <h1 style="color: white; font-size: 30px; padding: 30px;">Artistas em alta</h1>
+
+    <div class="artista">
+        <img src="image/brunomars.jpg" alt="Bruno Mars">
+        <div class="musica">
+            <h2>Bruno Mars</h2>
+            <ol>
+                <li>That's What I Like</li>
+                <li>Locked Out of Heaven</li>
+                <li>When I Was Your Man</li>
+            </ol>
+        </div>
+    </div>
+    <div class="artista">
+        <img src="Image/justinbieber.jpeg" alt="Justin Bieber">
+        <div class="musica">
+            <h2>Justin Bieber</h2>
+            <ol>
+                <li>Peach</li>
+                <li>Hold On</li>
+                <li>Baby</li>
+            </ol>
+        </div>
+    </div>
+    <div class="artista">
+        <img src="Image/theweeknd.jpeg" alt="The Weeknd">
+        <div class="musica">
+            <h2>The Weeknd</h2>
+            <ol>
+                <li>Blinding Lights</li>
+                <li>The Hills</li>
+                <li>Starboy</li>
+            </ol>
+        </div>
     </div>
 </body>
 
