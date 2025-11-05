@@ -1,50 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spotify</title>
-
     <style>
         body {
             margin: 0;
-            padding-top: 80px;
-            background-color: #191414;
+            padding: 0;
+            background-color: #121212;
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 20px;
+            color: white;
+        }
+
+        .barraNavegacao {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000;
+            padding: 10px 40px;
         }
 
         .logo {
             color: #1DB954;
-            font-size: 45px;
-            font-family: Arial, Helvetica, sans-serif;
-            position: absolute;
-            left: 20px;
-        }
-
-        .barraNavegacao {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
+            font-size: 36px;
+            font-weight: bold;
         }
 
         .barraNavegacao ul {
             list-style: none;
-            padding: 0;
-            margin: 0;
-            background-color: black;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 60px;
-            gap: 50px;
-        }
-
-        .barraNavegacao a:hover {
-            color: #1DB954;
-            cursor: pointer;
+            gap: 30px;
         }
 
         .barraNavegacao ul li a {
@@ -53,54 +40,61 @@
             font-weight: bold;
         }
 
-        .barraPesquisa form {
-            position: absolute;
-            right: 20px;
-            top: 7px;
+        .barraNavegacao ul li a:hover {
+            color: #1DB954;
+        }
+
+        .barraPesquisa {
+            padding: 15px 40px;
         }
 
         .barraPesquisa input {
-            padding: 15px;
+            padding: 20px;
             border-radius: 20px;
             border: none;
-            outline: none;
             background-color: #282828;
             color: white;
             width: 200px;
-            font-size: 15px;
+        }
+
+        h1 {
+            padding: 20px 40px;
+            font-size: 28px;
         }
 
         .artista {
-            color: white;
-            font-size: 15px;
             display: flex;
-            align-items: flex-start;
-            gap: 10px;
+            gap: 20px;
+            padding: 20px 40px;
+            align-items: center;
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            margin: 10px 40px;
         }
 
         .artista img {
-            padding: 15px;
-            height: 200px;
-            width: 200px;
-            border-radius: 100%;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
             object-fit: cover;
+            border: 2px solid #1DB954;
         }
 
-        .musica {
+        .musica h2 {
+            font-size: 20px  15px;
+            margin-bottom: 10px;
+        }
+
+        .musica ol {
             padding-left: 20px;
-            font-size: 20px;
-            margin: 0;
         }
 
         .musica li {
-            color: white;
-            padding: 5px;
+            padding: 5px 0;
         }
 
         .musica li:hover {
-            margin: 10px;
             color: #1DB954;
-            transition: 0.5s;
             cursor: pointer;
         }
     </style>
@@ -108,21 +102,19 @@
 
 <body>
     <nav class="barraNavegacao">
-        <div class="logo"><b>Spotify</b></div>
+        <div class="logo">Spotify</div>
         <ul>
-            <li><a href="index.html" id="bntInicio">Inicio</a></li>
-            <li><a href="">Sua Biblioteca</a></li>
-            <li><a href="conta.html" id="btnConta">Conta</a></li>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="#">Sua Biblioteca</a></li>
+            <li><a href="conta.html">Conta</a></li>
         </ul>
     </nav>
 
     <div class="barraPesquisa">
-        <form>
-            <input type="text" id="pesquisa" name="Buscar" placeholder="O que você quer ouvir?">
-        </form>
+        <input type="text" id="pesquisa" name="Buscar" placeholder="O que você quer ouvir?">
     </div>
 
-    <h1 style="color: white; font-size: 30px; padding: 30px;">Artistas em alta</h1>
+    <h1>Artistas em alta</h1>
 
     <div class="artista">
         <img src="image/brunomars.jpg" alt="Bruno Mars">
@@ -135,6 +127,7 @@
             </ol>
         </div>
     </div>
+
     <div class="artista">
         <img src="Image/justinbieber.jpeg" alt="Justin Bieber">
         <div class="musica">
@@ -146,6 +139,7 @@
             </ol>
         </div>
     </div>
+
     <div class="artista">
         <img src="Image/theweeknd.jpeg" alt="The Weeknd">
         <div class="musica">

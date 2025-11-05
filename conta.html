@@ -1,43 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Site Spotify</title>
-
     <style>
         body {
             margin: 0;
             padding: 0;
-            background-color: #191414;
+            background-color: #121212;
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 20px;
+            color: white;
+        }
+
+        /* Navbar */
+        .barraNavegacao {
+            background-color: #000;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .logo {
             color: #1DB954;
-            font-size: 45px;
-            font-family: Arial, Helvetica, sans-serif;
-            position: absolute;
-            left: 20px;
+            font-size: 36px;
+            font-weight: bold;
         }
 
         .barraNavegacao ul {
             list-style: none;
-            padding: 0;
-            margin: 0;
-            background-color: black;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 60px;
-            gap: 50px;
-        }
-
-        .barraNavegacao a:hover {
-            color: #1DB954;
-            cursor: pointer;
+            gap: 30px;
         }
 
         .barraNavegacao ul li a {
@@ -46,67 +41,73 @@
             font-weight: bold;
         }
 
+        .barraNavegacao ul li a:hover {
+            color: #1DB954;
+        }
+
+        /* Formulário */
         .info {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            height: 100vh;
+            padding: 40px;
+            text-align: center;
         }
 
         .info label {
-            color: white;
-            font-size: 30px;
+            display: block;
+            margin: 15px 0 5px 0;
         }
 
         .info input {
-            padding: 10px;
-            border-radius: 10px;
+            width: 300px;
+            padding: 10px 12px;
+            border-radius: 12px;
             border: none;
-            outline: none;
-            width: 250px;
-            font-size: 20px;
+            background-color: #1e1e1e;
+            color: white;
+            font-size: 16px;
+        }
+
+        .info input:focus {
+            border: 2px solid #1DB954;
         }
 
         .info button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            border-radius: 20px;
+            display: block;
+            margin: 20px auto 0;
+            padding: 10px 25px;
+            border-radius: 25px;
             border: none;
             background-color: #1DB954;
             color: white;
             font-weight: bold;
+            font-size: 16px;
             cursor: pointer;
-            font-size: 18px;
         }
 
         .info button:hover {
             background-color: #1ed760;
-            transition: 0.3s;
         }
     </style>
 </head>
 
 <body>
     <nav class="barraNavegacao">
-        <div class="logo"><b>Spotify</b></div>
+        <div class="logo">Spotify</div>
         <ul>
-            <li><a href="index.html" id="bntInicio">Inicio</a></li>
-            <li><a href="">Sua Biblioteca</a></li>
-            <li><a href="conta.html" id="btnConta">Conta</a></li>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="#">Sua Biblioteca</a></li>
+            <li><a href="conta.html">Conta</a></li>
         </ul>
     </nav>
 
     <form class="info">
-        <label for="nomeUsuario">Nome de Úsuario</label>
-        <input type="text" id="nomeUsuario" name="Úsuario">
+        <label for="nomeUsuario">Nome de Usuário</label>
+        <input type="text" id="nomeUsuario" name="usuario">
 
         <label for="emailUsuario">E-mail</label>
-        <input type="email" id="emailUsuario" name="E-mail">
+        <input type="email" id="emailUsuario" name="email">
 
         <label for="senhaUsuario">Digite uma Senha</label>
-        <input type="password" id="senhaUsuario" name="Senha">
+        <input type="password" id="senhaUsuario" name="senha">
 
         <button type="submit">Criar Conta</button>
     </form>
@@ -120,13 +121,13 @@
         form.addEventListener("submit", (event) => {
             event.preventDefault();
 
-            const nomeValor = nome.value;
-            const emailValor = email.value;
-            const senhaValor = senha.value;
+            const nomeValor = nome.value.trim();
+            const emailValor = email.value.trim();
+            const senhaValor = senha.value.trim();
 
             if (nomeValor.length < 8) {
                 alert("O nome de usuário deve ter no mínimo 8 caracteres!");
-                nome.style.border = "2px solid red";
+                nome.style.border = "2px solid #ff4d4d";
                 return;
             } else {
                 nome.style.border = "2px solid #1DB954";
@@ -134,7 +135,7 @@
 
             if (!emailValor.includes("@")) {
                 alert("O e-mail precisa conter '@'!");
-                email.style.border = "2px solid red";
+                email.style.border = "2px solid #ff4d4d";
                 return;
             } else {
                 email.style.border = "2px solid #1DB954";
@@ -142,7 +143,7 @@
 
             if (senhaValor.length < 5) {
                 alert("A senha deve ter no mínimo 5 caracteres!");
-                senha.style.border = "2px solid red";
+                senha.style.border = "2px solid #ff4d4d";
                 return;
             } else {
                 senha.style.border = "2px solid #1DB954";
